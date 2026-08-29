@@ -1,0 +1,4 @@
+const slides=[...document.querySelectorAll('.slide')],num=document.getElementById('num'),bar=document.getElementById('bar'),pause=document.getElementById('pause');let i=0,t=null,paused=false,d=6500;
+function show(n){slides[i].classList.remove('active');i=n%slides.length;slides[i].classList.add('active');num.textContent=String(i+1).padStart(2,'0');bar.style.transition='none';bar.style.width='0';if(!paused)requestAnimationFrame(()=>{bar.style.transition=`width ${d}ms linear`;bar.style.width='100%'});}
+function start(){clearInterval(t);if(paused)return;bar.style.transition=`width ${d}ms linear`;bar.style.width='100%';t=setInterval(()=>show(i+1),d)}
+pause.onclick=()=>{paused=!paused;pause.textContent=paused?'▶':'Ⅱ';pause.setAttribute('aria-label',paused?'Play slideshow':'Pause slideshow');if(paused){clearInterval(t);bar.style.transition='none'}else start()};show(0);start();
