@@ -1,10 +1,61 @@
-￼
-￼
-￼
-￼
-￼
+Für index.html muss wirklich so etwas wie folgendes im GitHub-Editor stehen:
 
-Welcome to Aton's World.
-My digital tail is wagging. Something cool is coming soon.
-aton_the_puppy@gmx.ch
-01 / 05
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111">
+  <meta name="description" content="Welcome to Aton's World. Something cool is coming soon.">
+  <title>ATON — Welcome to Aton's World</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site">
+
+    <div class="slides" aria-label="Aton photo slideshow">
+      <div class="slide active">
+        <img src="aton-01.jpg" alt="Aton in a futuristic tunnel">
+      </div>
+
+      <div class="slide">
+        <img src="aton-02.jpg" alt="Aton by the pool">
+      </div>
+
+      <div class="slide">
+        <img src="aton-03.jpg" alt="Aton in a colorful passage">
+      </div>
+
+      <div class="slide">
+        <img src="aton-04.jpg" alt="Aton in a laundromat">
+      </div>
+
+      <div class="slide">
+        <img src="aton-05.jpg" alt="Aton dancing in the rain">
+      </div>
+    </div>
+
+    <div class="shade"></div>
+
+    <section class="hero">
+      <h1>Welcome to Aton's World.</h1>
+      <p>My digital tail is wagging. Something cool is coming soon.</p>
+    </section>
+
+    <a class="contact" href="mailto:aton_the_puppy@gmx.ch">
+      aton_the_puppy@gmx.ch
+    </a>
+
+    <div class="counter">
+      <span id="num">01</span> / 05
+    </div>
+
+    <div class="progress">
+      <i id="bar"></i>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
