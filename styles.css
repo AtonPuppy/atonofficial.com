@@ -31,6 +31,10 @@ body {
     overflow: hidden;
 }
 
+/* --------------------------------------------------
+   SLIDES
+   -------------------------------------------------- */
+
 .slide {
     position: absolute;
     inset: 0;
@@ -43,9 +47,20 @@ body {
 
     opacity: 0;
 
-    transition: opacity 1.2s ease-in-out;
+    /*
+     * Smooth crossfade.
+     * No zoom, no movement.
+     */
+    transition: opacity 1.0s linear;
 
     pointer-events: none;
+
+    /*
+     * Prevents unwanted visual artifacts
+     * during the transition.
+     */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .slide.active {
@@ -61,9 +76,8 @@ body {
 
     .slide {
         /*
-         * Show the COMPLETE image on mobile.
-         * This prevents text and graphic elements
-         * inside the artwork from being cropped.
+         * Show the complete artwork on mobile.
+         * This prevents text and Aton from being cropped.
          */
         object-fit: contain;
         object-position: center center;
@@ -81,7 +95,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
 
     .slide {
-        transition: opacity 0.4s ease;
+        transition: opacity 0.4s linear;
     }
 
 }
