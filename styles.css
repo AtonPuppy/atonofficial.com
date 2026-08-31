@@ -25,9 +25,9 @@ body {
   background: #111;
 }
 
-/* -------------------------
+/* =========================
    SLIDESHOW
-------------------------- */
+========================= */
 
 .slide {
   position: absolute;
@@ -44,7 +44,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
   display: block;
   animation: zoom 6500ms linear both;
 }
@@ -59,13 +59,43 @@ body {
   }
 }
 
-/* -------------------------
+
+/* =========================
+   INDIVIDUAL IMAGE
+   POSITIONS
+========================= */
+
+/* Desktop */
+
+.slide:nth-child(1) img {
+  object-position: center center;
+}
+
+.slide:nth-child(2) img {
+  object-position: 65% center;
+}
+
+.slide:nth-child(3) img {
+  object-position: center center;
+}
+
+.slide:nth-child(4) img {
+  object-position: 65% center;
+}
+
+.slide:nth-child(5) img {
+  object-position: center center;
+}
+
+
+/* =========================
    DARK OVERLAY
-------------------------- */
+========================= */
 
 .shade {
   position: absolute;
   inset: 0;
+
   background:
     linear-gradient(
       180deg,
@@ -77,9 +107,10 @@ body {
   pointer-events: none;
 }
 
-/* -------------------------
+
+/* =========================
    MAIN TEXT
-------------------------- */
+========================= */
 
 .hero {
   position: absolute;
@@ -121,13 +152,13 @@ h1 {
   letter-spacing: 0.01em;
 }
 
-/* -------------------------
+
+/* =========================
    EMAIL
-------------------------- */
+========================= */
 
 .contact {
   position: absolute;
-
   z-index: 3;
 
   left: 7vw;
@@ -151,13 +182,13 @@ h1 {
   opacity: 0.65;
 }
 
-/* -------------------------
+
+/* =========================
    SLIDE COUNTER
-------------------------- */
+========================= */
 
 .counter {
   position: absolute;
-
   z-index: 3;
 
   right: 42px;
@@ -170,13 +201,13 @@ h1 {
   font-variant-numeric: tabular-nums;
 }
 
-/* -------------------------
+
+/* =========================
    PROGRESS BAR
-------------------------- */
+========================= */
 
 .progress {
   position: absolute;
-
   z-index: 3;
 
   right: 42px;
@@ -197,9 +228,10 @@ h1 {
   background: #fff;
 }
 
-/* -------------------------
+
+/* =========================
    MOBILE
-------------------------- */
+========================= */
 
 @media (max-width: 700px) {
 
@@ -221,7 +253,6 @@ h1 {
   .contact {
     left: 24px;
     bottom: 31px;
-
     font-size: 10px;
   }
 
@@ -233,14 +264,58 @@ h1 {
   .progress {
     right: 24px;
     bottom: 28px;
-
     width: 74px;
+  }
+
+
+  /* -------------------------
+     MOBILE IMAGE POSITIONING
+  ------------------------- */
+
+  .slide:nth-child(1) img {
+    object-position: center center;
+  }
+
+  /* Luftmatratzen-Foto */
+  .slide:nth-child(2) img {
+    object-position: 75% center;
+  }
+
+  .slide:nth-child(3) img {
+    object-position: center center;
+  }
+
+  /* Waschmaschinen-Foto */
+  .slide:nth-child(4) img {
+    object-position: 75% center;
+  }
+
+  .slide:nth-child(5) img {
+    object-position: center center;
+  }
+
+
+  /* Less zoom on small screens */
+
+  .slide img {
+    animation-name: mobileZoom;
   }
 }
 
-/* -------------------------
+@keyframes mobileZoom {
+  from {
+    transform: scale(1.01);
+  }
+
+  to {
+    transform: scale(1.035);
+  }
+}
+
+
+/* =========================
    REDUCED MOTION
-------------------------- */
+========================= */
 
 @media (prefers-reduced-motion: reduce) {
 
