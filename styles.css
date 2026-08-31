@@ -43,7 +43,6 @@ body {
 
     opacity: 0;
 
-    /* Nur noch sanftes Überblenden */
     transition: opacity 1.2s ease-in-out;
 
     pointer-events: none;
@@ -61,7 +60,15 @@ body {
 @media (max-width: 600px) {
 
     .slide {
+        /*
+         * Show the COMPLETE image on mobile.
+         * This prevents text and graphic elements
+         * inside the artwork from being cropped.
+         */
+        object-fit: contain;
         object-position: center center;
+
+        background: #000;
     }
 
 }
@@ -74,7 +81,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
 
     .slide {
-        transition: opacity 0.3s ease;
+        transition: opacity 0.4s ease;
     }
 
 }
